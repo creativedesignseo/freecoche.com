@@ -1,9 +1,10 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-white pt-20 pb-10">
+    <footer id="contacto" className="bg-secondary text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-16 border-b border-slate-700 pb-16">
           <div className="space-y-6">
@@ -18,10 +19,10 @@ const Footer = () => {
           <div>
             <h6 className="text-lg font-bold mb-6">Enlaces Rápidos</h6>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#como-funciona" className="hover:text-primary transition-colors">Cómo funciona</a></li>
-              <li><a href="#faq" className="hover:text-primary transition-colors">Preguntas Frecuentes</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Tasación Online</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contacto</a></li>
+              <li><HashLink smooth to="/#como-funciona" className="hover:text-primary transition-colors">Cómo funciona</HashLink></li>
+              <li><HashLink smooth to="/#faq" className="hover:text-primary transition-colors">Preguntas Frecuentes</HashLink></li>
+              <li><HashLink smooth to="/#tasacion" className="hover:text-primary transition-colors">Tasación Online</HashLink></li>
+              <li><HashLink smooth to="/#contacto" className="hover:text-primary transition-colors">Contacto</HashLink></li>
             </ul>
           </div>
           

@@ -4,7 +4,7 @@ import { ShieldCheck, Zap, Clock } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-slate-50">
+    <section id="tasacion" className="relative pt-32 pb-20 overflow-hidden bg-slate-50">
       {/* Background Decor & Image */}
       <div className="absolute top-0 right-0 w-3/4 h-full -z-10">
         <div className="absolute inset-0 bg-gradient-to-l from-slate-50/10 via-slate-50/50 to-slate-50 z-10" />

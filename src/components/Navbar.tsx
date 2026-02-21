@@ -1,5 +1,6 @@
 import { Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   return (
@@ -11,8 +12,8 @@ const Navbar = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#como-funciona" className="text-slate-600 hover:text-primary transition-colors font-medium">Cómo funciona</a>
-            <a href="#faq" className="text-slate-600 hover:text-primary transition-colors font-medium">Preguntas frecuentes</a>
+            <HashLink smooth to="/#como-funciona" className="text-slate-600 hover:text-primary transition-colors font-medium">Cómo funciona</HashLink>
+            <HashLink smooth to="/#faq" className="text-slate-600 hover:text-primary transition-colors font-medium">Preguntas frecuentes</HashLink>
             <a 
               href="tel:+34612452875" 
               className="flex items-center gap-2 bg-primary text-secondary px-6 py-2.5 rounded-full hover:bg-primary-dark hover:text-white transition-all transform hover:scale-105 font-bold shadow-lg shadow-primary/20"
