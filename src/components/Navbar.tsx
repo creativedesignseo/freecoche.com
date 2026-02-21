@@ -14,11 +14,11 @@ const Navbar = () => {
             <a href="#como-funciona" className="text-slate-600 hover:text-primary transition-colors font-medium">Cómo funciona</a>
             <a href="#faq" className="text-slate-600 hover:text-primary transition-colors font-medium">Preguntas frecuentes</a>
             <a 
-              href="tel:+34900000000" 
+              href="tel:+34612452875" 
               className="flex items-center gap-2 bg-primary text-secondary px-6 py-2.5 rounded-full hover:bg-primary-dark hover:text-white transition-all transform hover:scale-105 font-bold shadow-lg shadow-primary/20"
             >
               <Phone className="h-4 w-4" />
-              Llamar gratis
+              612 45 28 75
             </a>
           </div>
         </div>
