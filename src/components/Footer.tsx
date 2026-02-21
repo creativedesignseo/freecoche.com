@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16 border-b border-slate-700 pb-16">
           <div className="space-y-6">
             <div className="flex items-center">
-              <img src="/logo-freecoche.svg" alt="FreeCoche.com" className="h-10 w-auto brightness-0 invert" />
+              <img src="/logo-freecoche.svg" alt="FreeCoche.com" className="h-8 w-auto brightness-0 invert" />
             </div>
             <p className="text-slate-400 leading-relaxed">
               Líderes nacionales en la gestión y compra de vehículos con cargas legales. Transparencia, legalidad y rapidez garantizadas.
