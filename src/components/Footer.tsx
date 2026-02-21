@@ -30,8 +30,8 @@ const Footer = () => {
             <ul className="space-y-4 text-slate-400">
               <li><Link to="/privacidad" className="hover:text-primary transition-colors">Política de Privacidad</Link></li>
               <li><Link to="/aviso-legal" className="hover:text-primary transition-colors">Aviso Legal</Link></li>
-              <li><Link to="#" className="hover:text-primary transition-colors">Política de Cookies</Link></li>
-              <li><Link to="#" className="hover:text-primary transition-colors">Términos del Servicio</Link></li>
+              <li><Link to="/cookies" className="hover:text-primary transition-colors">Política de Cookies</Link></li>
+              <li><Link to="/terminos" className="hover:text-primary transition-colors">Términos del Servicio</Link></li>
             </ul>
           </div>
           
