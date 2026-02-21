@@ -1,21 +1,18 @@
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import FAQ from './components/FAQ';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import LegalNotice from './pages/LegalNotice';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <FAQ />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacidad" element={<PrivacyPolicy />} />
+        <Route path="/aviso-legal" element={<LegalNotice />} />
+      </Routes>
+    </Router>
   );
 }
 
