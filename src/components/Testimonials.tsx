@@ -25,7 +25,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-secondary">Opiniones de nuestros clientes</h2>
-          <p className="text-xl text-slate-600">Más de <span className="text-primary font-bold">500 coches</span> comprados el último año con total garantía.</p>
+          <p className="text-xl text-slate-600">Más de <span className="text-primary-dark font-bold">500 coches</span> comprados el último año con total garantía.</p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
@@ -40,7 +40,7 @@ const Testimonials = () => {
               <p className="text-lg text-slate-700 leading-relaxed mb-8 italic">"{t.text}"</p>
               <div>
                 <h5 className="font-bold text-secondary text-xl">{t.name}</h5>
-                <p className="text-sm text-primary font-semibold uppercase tracking-wider">{t.role}</p>
+                <p className="text-sm text-primary-dark font-semibold uppercase tracking-wider">{t.role}</p>
               </div>
             </div>
           ))}

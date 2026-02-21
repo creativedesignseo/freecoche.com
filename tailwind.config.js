@@ -8,11 +8,11 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#E11D48', // rose-600 (color automotriz profesional)
-          dark: '#9F1239',   // rose-800
+          DEFAULT: '#B9F8CF', // light green
+          dark: '#059669',    // emerald-600 for contrast
         },
         secondary: {
-          DEFAULT: '#1E293B', // slate-800 (autoridad)
+          DEFAULT: '#1E293B', // slate-800
           dark: '#0F172A',   // slate-900
         },
       },

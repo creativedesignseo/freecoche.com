@@ -43,7 +43,7 @@ const FAQ = () => {
                 className="w-full flex items-center justify-between p-6 text-left"
               >
                 <div className="flex items-center gap-4">
-                  <HelpCircle className="h-6 w-6 text-primary flex-shrink-0" />
+                  <HelpCircle className="h-6 w-6 text-primary-dark flex-shrink-0" />
                   <span className="text-lg font-bold text-secondary">{faq.question}</span>
                 </div>
                 <ChevronDown className={cn("h-6 w-6 text-slate-400 transition-transform duration-300", openIndex === index && "rotate-180")} />

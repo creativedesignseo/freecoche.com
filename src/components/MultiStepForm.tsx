@@ -67,7 +67,7 @@ const MultiStepForm = () => {
         </div>
         <h3 className="text-3xl font-bold text-secondary mb-4">¡Solicitud recibida!</h3>
         <p className="text-slate-600 text-lg">
-          Estamos analizando tu caso. Un experto te contactará en menos de <span className="font-bold text-primary italic">24 horas</span>.
+          Estamos analizando tu caso. Un experto te contactará en menos de <span className="font-bold text-primary-dark italic">24 horas</span>.
         </p>
       </motion.div>
     );
@@ -87,7 +87,7 @@ const MultiStepForm = () => {
             key={i}
             className={cn(
               "h-10 w-10 rounded-full flex items-center justify-center font-bold transition-all duration-300",
-              step >= i ? "bg-primary text-white shadow-lg shadow-primary/30" : "bg-slate-100 text-slate-400"
+              step >= i ? "bg-primary text-secondary shadow-lg shadow-primary/30" : "bg-slate-100 text-slate-400"
             )}
           >
             {i}
@@ -196,7 +196,7 @@ const MultiStepForm = () => {
             <button
               type="button"
               onClick={nextStep}
-              className="flex-[2] flex items-center justify-center gap-2 py-4 px-6 bg-primary text-white font-bold rounded-2xl hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 uppercase tracking-wider"
+              className="flex-[2] flex items-center justify-center gap-2 py-4 px-6 bg-primary text-secondary font-bold rounded-2xl hover:bg-primary-dark hover:text-white transition-all shadow-xl shadow-primary/20 uppercase tracking-wider"
             >
               Siguiente
               <ChevronRight className="h-5 w-5" />
