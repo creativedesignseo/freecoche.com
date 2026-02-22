@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, ChevronLeft, CheckCircle2, Phone } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const formSchema = z.object({
@@ -28,6 +28,13 @@ type FormData = z.infer<typeof formSchema>;
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<FormData | null>(null);
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
 
   const {
     register,
@@ -49,16 +56,35 @@ const MultiStepForm = () => {
   };
 
   const onSubmit = (data: FormData) => {
-    console.log("Lead captured:", data);
-    setIsSubmitted(true);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "tasacion-gratuita", ...data })
+    })
+    .then(() => {
+      setSubmittedData(data);
+      setIsSubmitted(true);
+      
+      // GTM Event
+      if ((window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          'event': 'form_submission_success',
+          'form_name': 'tasacion-gratuita'
+        });
+      }
+    })
+    .catch(error => console.error("Error submitting form:", error));
   };
 
   if (isSubmitted) {
+    const waMessage = encodeURIComponent(`Hola, me gustaría tasar mi coche: ${submittedData?.brand} ${submittedData?.model} del año ${submittedData?.year}. Mi nombre es ${submittedData?.fullName}.`);
+    const waLink = `https://wa.me/34612452875?text=${waMessage}`;
+
     return (
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center py-12 px-6"
+        className="text-center py-8 px-6"
       >
         <div className="flex justify-center mb-6">
           <div className="h-20 w-20 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -66,9 +92,22 @@ const MultiStepForm = () => {
           </div>
         </div>
         <h3 className="text-3xl font-bold text-secondary mb-4">¡Solicitud recibida!</h3>
-        <p className="text-slate-600 text-lg">
+        <p className="text-slate-600 text-lg mb-8">
           Estamos analizando tu caso. Un experto te contactará en menos de <span className="font-bold text-primary-dark italic">24 horas</span>.
         </p>
+
+        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <p className="text-sm font-bold text-secondary uppercase tracking-widest mb-4">¿Quieres una respuesta más rápida?</p>
+          <a 
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#128C7E] transition-all transform hover:scale-105 shadow-xl shadow-green-500/20 w-full justify-center"
+          >
+            <Phone className="h-5 w-5" />
+            Contactar por WhatsApp ahora
+          </a>
+        </div>
       </motion.div>
     );
   }
@@ -95,7 +134,18 @@ const MultiStepForm = () => {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form 
+        onSubmit={handleSubmit(onSubmit)} 
+        className="space-y-6"
+        name="tasacion-gratuita"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        {/* Anti-spam field for Netlify */}
+        <input type="hidden" name="form-name" value="tasacion-gratuita" />
+        <p className="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div
