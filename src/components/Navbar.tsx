@@ -16,10 +16,20 @@ const Navbar = () => {
             <HashLink smooth to="/#faq" className="text-slate-600 hover:text-primary transition-colors font-medium">Preguntas frecuentes</HashLink>
             <a 
               href="tel:+34612452875" 
-              className="flex items-center gap-2 bg-primary text-secondary px-6 py-2.5 rounded-full hover:bg-primary-dark hover:text-white transition-all transform hover:scale-105 font-bold shadow-lg shadow-primary/20"
+              className="flex items-center gap-2 bg-slate-100 text-secondary px-5 py-2.5 rounded-full hover:bg-slate-200 transition-all font-bold"
             >
               <Phone className="h-4 w-4" />
               612 45 28 75
+            </a>
+            <a 
+              id="btn-whatsapp-cta"
+              href="https://wa.me/34612452875"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 rounded-full hover:bg-[#128C7E] transition-all transform hover:scale-105 font-bold shadow-lg shadow-green-500/20"
+            >
+              <Phone className="h-4 w-4" />
+              WhatsApp
             </a>
           </div>
         </div>

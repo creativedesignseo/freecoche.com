@@ -1,6 +1,6 @@
 
 import MultiStepForm from './MultiStepForm';
-import { ShieldCheck, Zap, Clock } from 'lucide-react';
+import { ShieldCheck, Zap, Clock, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -41,6 +41,19 @@ const Hero = () => {
                 <Clock className="h-6 w-6 text-emerald-500" />
                 <span className="font-semibold text-secondary">Liquidación rápida</span>
               </div>
+            </div>
+
+            <div className="pt-4">
+              <a 
+                id="btn-whatsapp-hero"
+                href="https://wa.me/34612452875"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#128C7E] transition-all transform hover:scale-105 shadow-xl shadow-green-500/20"
+              >
+                <Phone className="h-5 w-5" />
+                Contactar por WhatsApp
+              </a>
             </div>
           </div>
           
