@@ -25,20 +25,22 @@
     <form name="tasacion-gratuita" netlify netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="tasacion-gratuita" />
       <input type="text" name="bot-field" />
-      <input type="text" name="brand" />
-      <input type="text" name="model" />
-      <input type="text" name="year" />
+      <input type="text" name="carDetails" />
       <input type="text" name="kilometers" />
       <select name="chargeType">
         <option value="Embargo"></option>
-        <option value="Reserva de Dominio"></option>
-        <option value="Multas Pendientes"></option>
-        <option value="Otras Cargas"></option>
+        <option value="Precinto"></option>
+        <option value="Libre de cargas"></option>
+        <option value="Multas"></option>
+        <option value="Leasing"></option>
+        <option value="Financiado"></option>
+        <option value="Impago de Impuestos"></option>
+        <option value="Siniestrado"></option>
+        <option value="Con golpes"></option>
+        <option value="Averiado"></option>
       </select>
-      <textarea name="chargeDescription"></textarea>
-      <input type="text" name="fullName" />
-      <input type="email" name="email" />
       <input type="text" name="phone" />
+      <input type="email" name="email" />
     </form>
 
     <script type="module" src="/src/main.tsx"></script>
