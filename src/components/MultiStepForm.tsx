@@ -46,24 +46,25 @@ const MultiStepForm = () => {
     mode: 'onChange',
   });
 
-  const onSubmit = (data: FormData) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "tasacion-gratuita", ...data })
-    })
-    .then(() => {
+  const onSubmit = async (data: FormData) => {
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "tasacion-gratuita", ...data })
+      });
       setSubmittedData(data);
       setIsSubmitted(true);
-      
+
       if ((window as any).dataLayer) {
         (window as any).dataLayer.push({
           'event': 'form_submission_success',
           'form_name': 'tasacion-gratuita'
         });
       }
-    })
-    .catch(error => console.error("Error submitting form:", error));
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   if (isSubmitted) {
